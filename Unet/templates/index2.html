@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload MRI Image</title>
+    <title>Brain Tumor Segmentation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #4aeaff, #b0b0e9);
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,61 +17,93 @@
         }
 
         .container {
-            max-width: 800px;
-	    max-height: 400px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-	    text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            color: #333;
-        }
-
-  	h3 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            margin-top: 20px;
-            margin-right: 20px;
-        }
-
-        input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            color: #007bff;
+            font-size: 32px;
             margin-bottom: 10px;
         }
 
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            transition: border 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border-color: #007bff;
+        }
+
         button[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
+            background: #007bff;
+            color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
-            width: 103%;
-            display: block;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s;
         }
 
         button[type="submit"]:hover {
-            background-color: #0056b3;
+            background: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-	<h1>Brain Tumor Segmentation</h1>
-        <p>"Welcome to our Brain Tumor Segmentation Website! We provide cutting-edge technology to accurately analyze and segment brain tumors from MRI images. Our platform offers precise results and intuitive user experience, empowering medical professionals with essential diagnostic insights for better patient care."</p>
+        <h1>Brain Tumor Segmentation</h1>
+        <p>
+            Welcome to our Brain Tumor Segmentation platform. Upload an MRI image to analyze and segment brain tumors using advanced AI algorithms. 
+            Designed for medical professionals seeking accurate diagnostic insights.
+        </p>
         <h3>Upload MRI Image</h3>
         <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept="image/*">
+            <input type="file" name="file" accept="image/*" required>
             <button type="submit">Upload</button>
         </form>
     </div>
