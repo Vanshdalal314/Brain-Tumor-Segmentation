@@ -1,50 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-            margin-top: 50px;
-        }
-        img {
-            max-width: 80%;
-            height: 800px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #4aeaff, #b0b0e9);
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      margin-top: 40px;
+      color: #007bff;
+    }
+
+    h4 {
+      margin-top: 30px;
+      font-weight: 600;
+      color: #dc3545;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+      padding: 0 20px;
+    }
+
+    .info-block {
+      text-align: left;
+      padding: 0 40px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .conclusion {
+      margin-top: 30px;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="container">
     <h1>Result</h1>
-    <img src="{{ url_for('static', filename='pred.jpg') }}" alt="Output Image">
-<h3>Prediction Summary</h3>
-Our website has processed your uploaded MRI image to show where the brain tumor is. We've outlined the areas affected by the tumor to help understand its location and size.
+    <img src="{{ url_for('static', filename='pred.jpg') }}" alt="Predicted Output Image">
 
-<h3>Key Findings</h3>
-Tumor Location: We've pinpointed the location of the tumor in the brain.<br>
+    <h3>Prediction Summary</h3>
+    <p>Our system has processed your MRI image to highlight the tumor region. The prediction offers clarity on the affected area, supporting medical professionals in quick assessment.</p>
 
-Size Estimation: Our system gives an idea of how big the tumor is.<br>
+    <h3>Key Findings</h3>
+    <div class="info-block">
+      <ul>
+        <li><strong>Tumor Location:</strong> The model has accurately identified the area in the brain where the tumor is located.</li>
+        <li><strong>Size Estimation:</strong> An approximation of the tumor size is visible to help determine severity.</li>
+        <li><strong>Visual Aid:</strong> Clearly highlighted results improve readability for radiologists and doctors.</li>
+      </ul>
+    </div>
 
-Helpful Visualization: The results are shown clearly, making it easy for doctors to interpret.
     <h4>Important Note</h4>
-While our tool provides valuable insights, it's essential not to rely solely on these results. We recommend consulting a doctor or medical professional for accurate diagnosis and treatment planning.
+    <p>Please remember that this tool is an assistive diagnostic aid and not a substitute for medical evaluation. Always consult a qualified healthcare professional for confirmation and treatment planning.</p>
 
-<h4>Conclusion</h4>
-Our tool provides a straightforward way to see where the brain tumor is. It's designed to assist doctors in making informed decisions about treatment options for patients.
-<br>
-<br>
+    <h4>Conclusion</h4>
+    <p class="conclusion">This tool provides a convenient way to visually assess MRI scans for tumor detection, offering useful insights to guide clinical decision-making.</p>
+  </div>
 </body>
 </html>
